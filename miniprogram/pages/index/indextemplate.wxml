@@ -1,0 +1,4 @@
+<!-- indextemplate.wxml -->
+<template name="date">
+  <view id="date" style="background:{{backgroundcolor0}}" bindtap="dateselect" data-index="{{date}}">{{date}}</view>
+</template>

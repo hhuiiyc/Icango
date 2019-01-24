@@ -1,0 +1,62 @@
+/* miniprogram/pages/index/index.wxss */
+#viewdate{
+  margin-left: 10rpx;
+}
+#week{
+  width:100rpx;
+  height: 50rpx;
+  border-right: solid 1px;
+  border-bottom: solid 2px;
+  float: left;
+
+}
+.msg{
+  width: 100%;
+  height:60%;
+}
+#groupname{
+  float:left;
+  width:50%;
+  height:100%;
+}
+#groupinfo{
+  float:left;
+  width:50%;
+  height: 100%;
+}
+#buttonlist{
+  width: 100%;
+  height: 20%;
+}
+.buttonlistview{
+  float:left;
+  width: 33%;
+}
+.buttonlistbutton{
+  width: 100px;
+  height: 40px;
+  margin: auto;
+}
+#month{
+  height: 20%;
+  width: 100%;
+}
+#monthtext{
+  float:right;
+  margin-left: auto;
+  margin-right: auto;
+}
+.date{
+  float:left;
+  width:100rpx;
+  height: 120rpx;
+  border-right: solid grey 1px;
+  border-bottom:solid grey 2px;
+}
+.peoplenum{
+  float:right;
+  position: relative;
+  bottom: -75rpx;
+  color:blue;
+  font-size:17px;
+}

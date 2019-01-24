@@ -1,0 +1,145 @@
+<!--miniprogram/pages/index/index.wxml-->
+<import src="indextemplate.wxml"/>
+
+<view style="height:{{screenHeight}}px">
+<view name="headblock" style='height:30%;border:black solid 1px'>
+  <view class="msg">
+    <view id="groupname">
+      <view>{{groupname}}</view>
+      <view>{{usrname}}</view>
+   </view>
+   <view id="groupinfo">活动信息：
+      <view>{{groupinfo}}</view>
+    </view>
+  </view>
+  <view class="buttonlist">
+    <view class="buttonlistview">
+      <button class="buttonlistbutton"  disabled="{{dateselectfalg}}" bindtap="beginselected">选择</button>
+    </view>
+    <view class="buttonlistview">
+      <button class="buttonlistbutton"  disabled="{{!dateselectfalg}}" bindtap="saveselected">保存</button>
+    </view>
+    <view class="buttonlistview">
+      <button class="buttonlistbutton"  disabled="{{dateselectfalg}}" bindtap="freshbutton">刷新</button>
+    </view>
+  </view>
+  <view id="month">
+    <view id="monthtext">{{month}}月</view>
+  </view>
+</view>
+
+<view name="dateblock" id="viewdate" style='height:60%;border:black solid 1px' >
+  <view wx:for="{{[1,2,3,4,5,6,7]}}" id="week">星期{{item}}</view>
+  <view class="date" style="background:{{dateobjectarray[0].backgroundcolor}};color:{{dateobjectarray[0].textcolor}}" bindtap="dateselect" data-index="0">{{dateobjectarray[0].date}}
+    <view class="peoplenum">{{dateobjectarray[0].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[1].backgroundcolor}};color:{{dateobjectarray[1].textcolor}}" bindtap="dateselect" data-index="1">{{dateobjectarray[1].date}}
+	  <view class="peoplenum">{{dateobjectarray[1 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[2].backgroundcolor}};color:{{dateobjectarray[2].textcolor}}" bindtap="dateselect" data-index="2">{{dateobjectarray[2].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[2 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[3].backgroundcolor}};color:{{dateobjectarray[3].textcolor}}" bindtap="dateselect" data-index="3">{{dateobjectarray[3].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[3 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[4].backgroundcolor}};color:{{dateobjectarray[4].textcolor}}" bindtap="dateselect" data-index="4">{{dateobjectarray[4].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[4 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[5].backgroundcolor}};color:{{dateobjectarray[5].textcolor}}" bindtap="dateselect" data-index="5">{{dateobjectarray[5].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[5 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[6].backgroundcolor}};color:{{dateobjectarray[6].textcolor}}" bindtap="dateselect" data-index="6">{{dateobjectarray[6].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[6 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[7].backgroundcolor}};color:{{dateobjectarray[7].textcolor}}" bindtap="dateselect" data-index="7">{{dateobjectarray[7].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[7 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[8].backgroundcolor}};color:{{dateobjectarray[8].textcolor}}" bindtap="dateselect" data-index="8">{{dateobjectarray[8].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[8 ].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[9].backgroundcolor}};color:{{dateobjectarray[9].textcolor}}" bindtap="dateselect" data-index="9">{{dateobjectarray[9].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[9].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[10].backgroundcolor}};color:{{dateobjectarray[10].textcolor}}" bindtap="dateselect" data-index="10">{{dateobjectarray[10].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[10].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[11].backgroundcolor}};color:{{dateobjectarray[11].textcolor}}" bindtap="dateselect" data-index="11">{{dateobjectarray[11].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[11].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[12].backgroundcolor}};color:{{dateobjectarray[12].textcolor}}" bindtap="dateselect" data-index="12">{{dateobjectarray[12].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[12].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[13].backgroundcolor}};color:{{dateobjectarray[13].textcolor}}" bindtap="dateselect" data-index="13">{{dateobjectarray[13].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[13].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[14].backgroundcolor}};color:{{dateobjectarray[14].textcolor}}" bindtap="dateselect" data-index="14">{{dateobjectarray[14].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[14].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[15].backgroundcolor}};color:{{dateobjectarray[15].textcolor}}" bindtap="dateselect" data-index="15">{{dateobjectarray[15].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[15].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[16].backgroundcolor}};color:{{dateobjectarray[16].textcolor}}" bindtap="dateselect" data-index="16">{{dateobjectarray[16].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[16].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[17].backgroundcolor}};color:{{dateobjectarray[17].textcolor}}" bindtap="dateselect" data-index="17">{{dateobjectarray[17].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[17].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[18].backgroundcolor}};color:{{dateobjectarray[18].textcolor}}" bindtap="dateselect" data-index="18">{{dateobjectarray[18].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[18].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[19].backgroundcolor}};color:{{dateobjectarray[19].textcolor}}" bindtap="dateselect" data-index="19">{{dateobjectarray[19].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[19].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[20].backgroundcolor}};color:{{dateobjectarray[20].textcolor}}" bindtap="dateselect" data-index="20">{{dateobjectarray[20].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[20].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[21].backgroundcolor}};color:{{dateobjectarray[21].textcolor}}" bindtap="dateselect" data-index="21">{{dateobjectarray[21].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[21].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[22].backgroundcolor}};color:{{dateobjectarray[22].textcolor}}" bindtap="dateselect" data-index="22">{{dateobjectarray[22].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[22].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[23].backgroundcolor}};color:{{dateobjectarray[23].textcolor}}" bindtap="dateselect" data-index="23">{{dateobjectarray[23].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[23].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[24].backgroundcolor}};color:{{dateobjectarray[24].textcolor}}" bindtap="dateselect" data-index="24">{{dateobjectarray[24].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[24].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[25].backgroundcolor}};color:{{dateobjectarray[25].textcolor}}" bindtap="dateselect" data-index="25">{{dateobjectarray[25].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[25].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[26].backgroundcolor}};color:{{dateobjectarray[26].textcolor}}" bindtap="dateselect" data-index="26">{{dateobjectarray[26].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[26].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[27].backgroundcolor}};color:{{dateobjectarray[27].textcolor}}" bindtap="dateselect" data-index="27">{{dateobjectarray[27].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[27].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[28].backgroundcolor}};color:{{dateobjectarray[28].textcolor}}" bindtap="dateselect" data-index="28">{{dateobjectarray[28].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[28].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[29].backgroundcolor}};color:{{dateobjectarray[29].textcolor}}" bindtap="dateselect" data-index="29">{{dateobjectarray[29].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[29].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[30].backgroundcolor}};color:{{dateobjectarray[30].textcolor}}" bindtap="dateselect" data-index="30">{{dateobjectarray[30].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[30].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[31].backgroundcolor}};color:{{dateobjectarray[31].textcolor}}" bindtap="dateselect" data-index="31">{{dateobjectarray[31].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[31].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[32].backgroundcolor}};color:{{dateobjectarray[32].textcolor}}" bindtap="dateselect" data-index="32">{{dateobjectarray[32].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[32].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[33].backgroundcolor}};color:{{dateobjectarray[33].textcolor}}" bindtap="dateselect" data-index="33">{{dateobjectarray[33].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[33].num}}</view>
+  </view>
+  <view class="date" style="background:{{dateobjectarray[34].backgroundcolor}};color:{{dateobjectarray[34].textcolor}}" bindtap="dateselect" data-index="34">{{dateobjectarray[34].date}}
+ 	  <view class="peoplenum">{{dateobjectarray[34].num}}</view>
+  </view>
+
+</view>
+
+<view name="footblock" style='height:10%;border:black solid 1px'>
+  <view>建议日期:{{selectedarray}}</view>
+</view>
+
+</view>
